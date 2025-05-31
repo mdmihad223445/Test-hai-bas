@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamim University - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Tamim University Logo">
+                    <div class="logo-text">
+                        <h1>Tamim University</h1>
+                        <p>Excellence in Education</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="login.html" class="active">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-tabs">
+                    <button class="tab-btn active" data-tab="student">Student Login</button>
+                    <button class="tab-btn" data-tab="admin">Admin Login</button>
+                </div>
+                
+                <div class="login-form active" id="student-form">
+                    <h2>Student Portal Login</h2>
+                    <form id="studentLoginForm">
+                        <div class="form-group">
+                            <label for="studentEmail">Email</label>
+                            <input type="email" id="studentEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentPassword">Password</label>
+                            <input type="password" id="studentPassword" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Login</button>
+                        <p class="form-footer">Don't have an account? <a href="admissions.html">Apply now</a></p>
+                    </form>
+                </div>
+                
+                <div class="login-form" id="admin-form">
+                    <h2>Admin Portal Login</h2>
+                    <form id="adminLoginForm">
+                        <div class="form-group">
+                            <label for="adminEmail">Admin Email</label>
+                            <input type="email" id="adminEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminPassword">Password</label>
+                            <input type="password" id="adminPassword" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Tamim University</h3>
+                    <p>Founded in 2010, Tamim University has grown to become a leading institution of higher learning.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>123 Education Street</li>
+                        <li>Knowledge City, KC 12345</li>
+                        <li>Email: info@tamimuniversity.edu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Tamim University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
