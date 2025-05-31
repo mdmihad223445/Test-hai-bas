@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamim University - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Tamim University Logo">
+                    <div class="logo-text">
+                        <h1>Tamim University</h1>
+                        <p>Admin Panel</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" id="logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="admin-dashboard">
+        <div class="container">
+            <div class="admin-sidebar">
+                <ul>
+                    <li class="active"><a href="#" data-section="dashboard">Dashboard</a></li>
+                    <li><a href="#" data-section="applications">Applications</a></li>
+                    <li><a href="#" data-section="generate-ids">Generate IDs</a></li>
+                    <li><a href="#" data-section="settings">Settings</a></li>
+                </ul>
+            </div>
+            
+            <div class="admin-content">
+                <div class="admin-section active" id="dashboard-section">
+                    <h2>Admin Dashboard</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Total Applications</h3>
+                            <p class="stat-number" id="total-applications">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Pending Review</h3>
+                            <p class="stat-number" id="pending-applications">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Approved</h3>
+                            <p class="stat-number" id="approved-applications">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Rejected</h3>
+                            <p class="stat-number" id="rejected-applications">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-applications">
+                        <h3>Recent Applications</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>App ID</th>
+                                    <th>Name</th>
+                                    <th>Program</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-apps-table">
+                                <!-- Filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-section" id="applications-section">
+                    <h2>Manage Applications</h2>
+                    <div class="application-filters">
+                        <select id="status-filter">
+                            <option value="all">All Statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                        <input type="text" id="search-applications" placeholder="Search applications...">
+                    </div>
+                    
+                    <div class="applications-list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>App ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Program</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applications-table">
+                                <!-- Filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-section" id="generate-ids-section">
+                    <h2>Generate Application IDs</h2>
+                    <div class="generate-id-form">
+                        <div class="form-group">
+                            <label for="applicant-name">Applicant Name</label>
+                            <input type="text" id="applicant-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicant-email">Applicant Email</label>
+                            <input type="email" id="applicant-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="program-select">Program</label>
+                            <select id="program-select" required>
+                                <option value="">Select Program</option>
+                                <option value="CS">Computer Science</option>
+                                <option value="BBA">Business Administration</option>
+                                <option value="ENG">Engineering</option>
+                                <option value="MED">Medicine</option>
+                            </select>
+                        </div>
+                        <button id="generate-id-btn" class="submit-btn">Generate Application ID</button>
+                    </div>
+                    
+                    <div class="generated-id-display" id="generated-id-display">
+                        <!-- Will show generated ID -->
+                    </div>
+                    
+                    <div class="existing-ids">
+                        <h3>Recently Generated IDs</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Application ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Program</th>
+                                    <th>PIN</th>
+                                </tr>
+                            </thead>
+                            <tbody id="existing-ids-table">
+                                <!-- Filled by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-section" id="settings-section">
+                    <h2>Admin Settings</h2>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label for="admin-email">Admin Email</label>
+                            <input type="email" id="admin-email" value="mdmihad929016@gmail.com" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">New Password</label>
+                            <input type="password" id="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm New Password</label>
+                            <input type="password" id="confirm-password">
+                        </div>
+                        <button id="change-password-btn" class="submit-btn">Change Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/script.js"></script>
+</body>
+  </html>
